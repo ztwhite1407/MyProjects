@@ -1,0 +1,169 @@
+body {
+    margin: 0;
+    text-align: center;
+    font-family: 'Merriweather', serif;
+    background-color: white;
+  }
+  
+  form {
+    margin: 5em;
+  }
+  
+  #header {
+    font-family: 'Noto Serif TC';
+    font-size: 80px;
+    color: #009470;
+    margin-top: 0em;
+  }
+  
+  #catbox {
+      margin: 0em;
+  }
+
+  #category {
+    font-family: 'Noto Serif TC';
+    font-size: large;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    border-top: none;
+    background-color: lightgray;
+    border-bottom: 1px solid #DDD;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,.39), 0 -1px 1px #FFF, 0 1px 0 #FFF;
+  }
+  
+  #catlabel {
+    font-size: 30px;
+  }
+
+  #catbox {
+      margin-top: -1em;
+  }
+  
+  
+  #item {
+    font-family: 'Noto Serif TC';
+    font-size: large;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    border-top: none;
+    background-color: lightgray;
+    border-bottom: 1px solid #DDD;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,.39), 0 -1px 1px #FFF, 0 1px 0 #FFF;
+    margin-top: 0em;
+  }
+  
+  #itemlabel {
+    font-size: 30px;
+  }
+
+  #itembox {
+      margin-top: -1em;
+  }
+
+  #itemnum {
+    font-family: 'Noto Serif TC';
+    font-size: large;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    border-top: none;
+    background-color: lightgray;
+    border-bottom: 1px solid #DDD;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,.39), 0 -1px 1px #FFF, 0 1px 0 #FFF;
+  }
+  
+  #itemnumlabel {
+    font-size: 30px;
+  }
+
+  #itemnumbox {
+      margin-top: -1em;
+  }
+  
+  #unitprice {
+    font-family: 'Noto Serif TC';
+    font-size: large;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    border-top: none;
+    background-color: lightgray;
+    border-bottom: 1px solid #DDD;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,.39), 0 -1px 1px #FFF, 0 1px 0 #FFF;
+  }
+  
+  #unitlabel {
+    font-size: 30px;
+  }
+
+  #unitbox {
+    margin-top: -1em;
+  }
+  
+ 
+
+  #stockquantity {
+    font-family: 'Noto Serif TC';
+    font-size: large;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    border-top: none;
+    background-color: lightgray;
+    border-bottom: 1px solid #DDD;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,.39), 0 -1px 1px #FFF, 0 1px 0 #FFF;
+  }
+  
+  #quantitylabel {
+    font-size: 30px;
+  }
+
+  #stockbox {
+    margin-top: -1em;
+  }
+
+  #jobnumber {
+    font-family: 'Noto Serif TC';
+    font-size: large;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    border-top: none;
+    background-color: lightgray;
+    border-bottom: 1px solid #DDD;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,.39), 0 -1px 1px #FFF, 0 1px 0 #FFF;
+  }
+  
+  #joblabel {
+    font-size: 30px;
+  }
+
+  #jobbox {
+    margin-top: -1em;
+  }
+
+  #quantity {
+    font-family: 'Noto Serif TC';
+    font-size: large;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    border-top: none;
+    background-color: lightgray;
+    border-bottom: 1px solid #DDD;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,.39), 0 -1px 1px #FFF, 0 1px 0 #FFF;
+  }
+
+  #quantitybox {
+    margin-top: -1em;
+  }
+  
+  
+  #submit {
+    font-family: 'Noto Serif TC';
+    font-size: large;
+    border-radius: 5px;
+    background-color: #009470;
+    border-color: #009470;
+    border-style: solid;
+    color: white;
+  }
+  
+  .menu {
+    font-family: 'Merriweather', serif;
+  }

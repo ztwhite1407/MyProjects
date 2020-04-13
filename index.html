@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript Calculator</title>
+    <link rel="stylesheet" href="stylesheet.css">
+
+<script>
+    function calc() {
+        
+
+        var X = parseFloat(document.getElementById('X').value);
+
+        var Y = parseFloat(document.getElementById('Y').value);
+
+        var oper = document.getElementById('operators').value;
+
+ 
+
+        if (oper == "+") {
+
+            document.getElementById('Y').value = X + Y;
+            document.getElementById('X').value = ""; 
+        }
+
+        if (oper == "-") {
+
+            document.getElementById('Y').value = X - Y;
+            document.getElementById('X').value = ""; 
+        }
+
+        if (oper == "/") {
+
+            document.getElementById('Y').value = Y/X;
+            document.getElementById('X').value = "";
+        }
+
+        if (oper == "X") {
+
+            document.getElementById('Y').value = X*Y;
+            document.getElementById('X').value = "";
+        }
+
+        if (oper == "%") {
+
+            document.getElementById('Y').value = Y%X;
+            document.getElementById('X').value = "";
+        }
+
+        if (oper == "<=") {
+
+            document.getElementById('Y').value = Number(Y<=X);
+            document.getElementById('X').value = "";
+            
+        }
+
+        if (oper == ">=") {
+
+            document.getElementById('Y').value = Number(Y>=X);
+            document.getElementById('X').value = "";
+            
+        }
+
+    }
+
+    function clear1() {
+
+        document.getElementById('Y').value = "";        
+
+    }
+    
+</script> 
+    
+</head>
+
+<body>
+
+    <h1>
+        <center>
+        JavaScript Calculator
+        </center>
+    </h1>
+<center>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    Y = <input type = "text" id = "Y">
+   <br>
+   <br>
+    X = <input type = "text" id = "X">
+   <br>
+   <br> 
+   
+   <!-- Where I set my operators -->
+   <select id="operators">
+       <option value = "+">+</option>
+       <option value = "-">-</option>
+       <option value = "/">/</option>
+       <option value = "X">X</option>
+       <option value = "%">%</option>
+       <option value = ">=">>=</option>
+       <option value = "<="><=</option>
+   </select>
+
+   <button type = "submit" id="submit_button" onclick = "calc();">=</button>
+
+   <br>
+
+   <button type="reset" id="clear_button" onclick="clear1()";>Clear</button>
+ 
+</center>
+</body>
+</html>

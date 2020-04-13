@@ -1,0 +1,549 @@
+-- phpMyAdmin SQL Dump
+-- version 4.9.0.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Jul 31, 2019 at 01:59 AM
+-- Server version: 10.3.16-MariaDB
+-- PHP Version: 7.3.6
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `inventory`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `category`
+--
+
+CREATE TABLE `category` (
+  `cat_id` int(16) NOT NULL,
+  `cat_name` varchar(50) DEFAULT 'NOT NULL'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `category`
+--
+
+INSERT INTO `category` (`cat_id`, `cat_name`) VALUES
+(1, 'BOLTS'),
+(2, 'BOXES'),
+(3, 'BRACKETS'),
+(4, 'BUSHINGS'),
+(5, 'CONDUIT'),
+(6, 'CONNECTORS'),
+(7, 'COUPLINGS'),
+(8, 'GROUNDING'),
+(9, 'HANGERS/SUPPORT'),
+(10, 'TOOLS'),
+(11, 'NUTS'),
+(12, 'PLASTER RING'),
+(13, 'RECEPTACLES'),
+(14, 'SWITCHES'),
+(15, 'SCREWS'),
+(16, 'STRAPS'),
+(17, 'TAPE'),
+(18, 'WASHERS'),
+(19, 'WIRE'),
+(20, 'WIRE NUTS'),
+(21, 'LIGHTING'),
+(22, 'PRE-FAB');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `items`
+--
+
+CREATE TABLE `items` (
+  `item_id` int(16) NOT NULL,
+  `cat_id` int(16) NOT NULL,
+  `item_name` varchar(256) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `items`
+--
+
+INSERT INTO `items` (`item_id`, `cat_id`, `item_name`) VALUES
+(1, 3, '4\" L-BRACKET'),
+(2, 12, 'TWO GANG PLASTER 5/8\" RISE'),
+(3, 12, 'SINGLE GANG PLASTER 5/8\" RISE'),
+(4, 2, 'DEEP CUT-IN BOX 1/2\"'),
+(5, 2, 'SHALLOW CUT-IN BOX 1/2\"'),
+(6, 13, '20A DUPLEX WHITE'),
+(7, 13, '20A DUPLEX GRAY'),
+(8, 22, '4\" L-BRACKET DEEP SINGLE GANG'),
+(9, 22, '4\" L-BRACKET SHALLOW SINGLE GANG'),
+(10, 2, '4 SQUARE DEEP BOX'),
+(11, 2, '4 SQUARE SHALLOW BOX'),
+(12, 9, '24\" T-BARS'),
+(13, 3, 'STUD BRACKET'),
+(14, 22, '6\" L-BRACKET SINGLE GANG '),
+(15, 22, 'T-BAR OCTAGON'),
+(16, 22, 'T-BAR 4\" BOX'),
+(17, 22, '4\" L-BRACKET TWO GANG'),
+(18, 19, '#10 HV COLORS SOLID'),
+(19, 19, '#10 HV COLORS STRANDED'),
+(20, 19, '#12 HV COLORS SOLID'),
+(21, 19, '#12 HV COLORS STRANDED'),
+(22, 19, '#12 LV COLORS SOLID'),
+(23, 19, '#12 LV COLORS STRANDED'),
+(24, 19, '12/2 120V MC (ROLLS OF 250 FT)'),
+(25, 19, '#8 WIRE'),
+(26, 19, '12/3 MC 120V (ROLLS OF 250 FT)'),
+(27, 10, 'JET STRING (BUCKETS)'),
+(28, 19, '#6 WIRE'),
+(29, 19, 'HOSPITAL GRADE 12/3 (ROLLS OF 250 FT)'),
+(30, 19, 'HOSPITAL GRADE 12/2 (ROLLS OF 250 FT)'),
+(31, 19, '12/3 277V MC (ROLLS OF 250 FT)'),
+(32, 19, '12/2 277V MC (ROLLS OF 250 FT)'),
+(33, 10, '6\' LADDER #1'),
+(34, 10, '6\' LADDER #2'),
+(35, 10, '6\' LADDER #3'),
+(36, 10, '6\' LADDER #4'),
+(37, 19, '12/4 120V MC'),
+(38, 10, '4L ARBOR'),
+(39, 19, '#12 GREEN STRANDED'),
+(40, 19, '#12 GREEN SOLID'),
+(41, 19, '#12 RED SOLID'),
+(42, 19, '#12 RED STRANDED'),
+(43, 19, '#12 BLUE STRANDED'),
+(44, 19, '#12 BLUE SOLID'),
+(45, 19, '#12 BLACK STRANDED'),
+(46, 19, '#12 BLACK SOLID'),
+(47, 19, '#12 WHITE SOLID'),
+(48, 16, '1/2\" EMT ONE HOLE STRAP'),
+(49, 16, '3/4\" EMT ONE HOLE STRAP'),
+(50, 16, '1\" EMT ONE HOLE STRAP'),
+(51, 11, '3/8\" SPRING NUT'),
+(52, 11, '1/4\" SPRING NUT'),
+(53, 19, '#12 RED/WHITE SOLID'),
+(54, 19, '#12 BLUE/WHITE SOLID'),
+(55, 19, '#12 ORANGE STRANDED'),
+(56, 19, '#12 ORANGE SOLID'),
+(57, 19, '#12 YELLOW STRANDED'),
+(58, 2, '4 SQUARE BLANK'),
+(59, 18, '3/4\" - 1/2\" REDUCING WASHER'),
+(60, 18, '1\" - 3/4\" REDUCING WASHER'),
+(61, 8, 'GROUND ROD CLAMP U BOLT'),
+(62, 9, 'BATWINGS'),
+(63, 8, 'GROUND ROD CLAMP'),
+(64, 4, '1/2\" PLASTIC BUSHING'),
+(65, 4, '3/4\" PLASTIC BUSHING'),
+(66, 4, '1\" PLASTIC BUSHING'),
+(67, 7, '3/4\" RAIN TITE COMPRESSION COUPLING'),
+(68, 9, '#12 S-HOOKS'),
+(69, 9, '1/2\"-3/4\" STUD MOUNT SNAP IN CONDUIT SUPPORT'),
+(70, 15, '3/4\" MINERALLAC STRAPS'),
+(71, 6, 'YELLOW QUICK CONNECT PUSH IN'),
+(72, 10, '2\" HOLE SAW '),
+(73, 10, ' 1 1/8\" HOLE SAW'),
+(74, 10, '1\" PADDLE BIT'),
+(75, 10, '1/4\" ROTARY DRILL BIT MASONRY'),
+(76, 10, '5/16\" DRILL BIT MASONRY'),
+(77, 1, '1/2\" X 1 1/4\" HEX HEAD BOLT'),
+(78, 18, '1/2\" FENDER WASHER'),
+(79, 1, '1/2\" X 1 1/2\" HEX HEAD BOLT'),
+(80, 11, '1/2\" NUT'),
+(81, 11, '3/8\" NUT '),
+(82, 18, '1/4\" FLAT WASHER '),
+(83, 18, '3/8\" WASHER '),
+(84, 6, '1 1/2\" EMT SS CONNECTOR '),
+(85, 7, '1 1/2\" EMT SS COUPLING'),
+(86, 6, '38 AST MC CONNECTORS '),
+(87, 6, '1/2\" MC SS CONNECTOR '),
+(88, 6, '1\" EMT SS CONNECTOR '),
+(89, 7, '1\" EMT SS COUPLING '),
+(90, 6, '1\" EMT SET SCREW CONNECTORS '),
+(91, 9, 'CEILING SAMMY\'S '),
+(92, 21, '120/277V TORK PHOTOCELL '),
+(93, 9, '.27 CALIBER SAFETY STRIP LOADS (YELLOW SHOTS)'),
+(94, 10, '1 3/4\" HOLE SAW '),
+(95, 15, '1 1/4\" TAPCON SCREWS'),
+(96, 9, '11.1 X 0.14\" ZIP TIES (WHITE)'),
+(97, 18, '1/4\" FLAT WASHER'),
+(98, 1, '3/8\" X 1 1/4\" HEX HEAD BOLT'),
+(99, 15, 'ROOFING SCREWS'),
+(100, 16, '3/4\" STRUT STRAP'),
+(101, 6, '1/2\" ROMEX CONNECTORS'),
+(102, 10, '6\" METAL SAWZAL BLADE'),
+(103, 16, '1 1/2\" EMT ONE HOLE STRAP'),
+(104, 13, '20A DUPLEX LIGHT ALMOND'),
+(105, 17, 'BLACK '),
+(106, 17, 'YELLOW'),
+(107, 17, 'BROWN'),
+(108, 17, 'BLUE'),
+(109, 17, 'RED'),
+(110, 17, 'ORANGE'),
+(111, 17, 'GREEN'),
+(112, 17, 'WHITE'),
+(113, 1, '1/4\" X 4\" TOGGLE BOLTS'),
+(114, 17, 'GREY'),
+(115, 19, '#12 BROWN STRANDED'),
+(116, 19, '#12 BROWN SOLID'),
+(117, 19, '#12 GRAY STRANDED'),
+(118, 19, '#10 WHITE STRANDED'),
+(119, 19, '#10 BLACK STRANDED'),
+(120, 19, '#10 GREEN STRANDED'),
+(121, 19, '#10 GRAY STRANDED'),
+(122, 19, '#10 BLUE STRANDED'),
+(123, 19, '#10 RED STRANDED'),
+(124, 19, '#10 ORANGE STRANDED'),
+(125, 19, '#10 YELLOW STRANDED'),
+(126, 19, '#10 BROWN STRANDED'),
+(127, 19, '#16 PURPLE STRANDED'),
+(128, 19, '#16 GRAY STRANDED '),
+(129, 5, '1/2\" EMT '),
+(130, 5, '3/4\" EMT'),
+(131, 5, '1\" EMT'),
+(132, 10, '9\" METAL SAWZALL BLADE'),
+(133, 9, 'PLASTIC ANCHOR KIT'),
+(134, 11, '1/4\" NUT '),
+(135, 15, '8/32 HEX HEAD MACHINE SCREW NUT ZINC'),
+(136, 15, '8 X 1/2\" HEX WASHER HEAD SELF DRILLING SCREW '),
+(137, 15, 'TEK SCREWS '),
+(138, 9, '1/4\" HILTI CEILING WIRE HANGER'),
+(139, 9, 'SPIKE ANCHORS'),
+(140, 9, '1/4\" - 20 THREADED ROD COUPLING'),
+(141, 9, 'RAMSET 1/2\" NAIL'),
+(142, 9, 'RAMSET 1\" NAIL'),
+(143, 9, 'RAMSET 1 1/2\" NAIL'),
+(144, 20, 'TWISTER PRO WIRE NUT'),
+(145, 20, 'RED WIRENUT'),
+(146, 20, 'TAN WIRENUT '),
+(147, 20, 'GREEN WIRENUT '),
+(148, 20, 'BLUE WIRENUT'),
+(149, 20, 'ORANGE WIRENUT'),
+(150, 21, 'HALO TRIM REPLACEMENT SPRINGS '),
+(151, 10, '1 3/8\" HOLE SAW '),
+(152, 10, 'FORK TERMINALS '),
+(153, 15, '10-32 X 3/8\" GROUND SCREW'),
+(154, 9, '2\" CONDUIT PISTON'),
+(155, 7, '1/2\" EMT SS COUPLING'),
+(156, 6, '1/2\" EMT SS CONNECTOR '),
+(157, 7, '3/4\" EMT SS COUPLING '),
+(158, 6, '3/4\" EMT SS CONNECTOR '),
+(159, 5, '3/4\" STUB UP 90'),
+(160, 5, '1\" STUB UP 90'),
+(161, 9, 'THIN UNISTRUT '),
+(162, 9, 'DEEP UNISTRUT '),
+(163, 9, '1/4\" THREADED ROD '),
+(164, 8, '3/4\" GROUND ROD '),
+(165, 1, '3/8\" x 4\" TOGGLE BOLTS'),
+(166, 13, 'INDUSTRIAL RAISED QUAD RECEPTACLE COVER'),
+(167, 9, 'SWIVEL HANGER '),
+(168, 13, 'INDUSTRIAL RAISED DUPLEX RECEPTACLE COVER'),
+(169, 6, '3/8\" CUT-IN SNAP LOCK MC BOX CONNECTOR '),
+(170, 14, '20A 1P SWITCH'),
+(171, 2, ''),
+(172, 2, 'eeii'),
+(173, 2, '12x12 Junction Box'),
+(174, 2, '12x12 Junction Box'),
+(175, 2, '12x12 Junction Box'),
+(176, 2, '12x12 Junction Box'),
+(177, 2, '12x12 Junction Box'),
+(178, 2, '12x12 Junction Box'),
+(179, 2, '12x12 Junction Box'),
+(180, 2, '12x12 Junction Box'),
+(181, 2, '12x12 Junction Box'),
+(182, 2, '12x12 Junction Box'),
+(183, 2, '12x12 Junction Box'),
+(184, 2, '8x8 Weatherproof'),
+(185, 10, 'Impact Driver');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `objects`
+--
+
+CREATE TABLE `objects` (
+  `item_number` int(16) NOT NULL,
+  `cat_id` int(16) NOT NULL,
+  `item_id` int(16) NOT NULL,
+  `unit_price` decimal(40,2) NOT NULL,
+  `quantity` int(16) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `objects`
+--
+
+INSERT INTO `objects` (`item_number`, `cat_id`, `item_id`, `unit_price`, `quantity`) VALUES
+(10212000, 3, 1, '1.36', 957),
+(10212001, 12, 2, '0.71', 1000),
+(10212002, 12, 3, '0.46', 1000),
+(10212003, 2, 4, '1.62', 1000),
+(10212004, 2, 5, '1.14', 1000),
+(10212005, 13, 6, '1.78', 1000),
+(10212006, 13, 7, '1.78', 1000),
+(10212007, 22, 8, '0.00', 1000),
+(10212008, 22, 9, '0.00', 1000),
+(10212009, 2, 10, '0.89', 846),
+(10212010, 2, 11, '0.65', 1000),
+(10212011, 9, 12, '5.89', 1000),
+(10212012, 3, 13, '3.30', 1000),
+(10212013, 22, 14, '0.00', 1000),
+(10212014, 22, 15, '0.00', 1000),
+(10212015, 22, 16, '0.00', 1000),
+(10212016, 22, 17, '0.00', 1000),
+(10212017, 19, 18, '175.00', 1000),
+(10212018, 19, 19, '167.02', 1000),
+(10212019, 19, 20, '114.40', 1000),
+(10212020, 19, 21, '106.79', 1000),
+(10212021, 19, 22, '114.40', 1000),
+(10212022, 19, 23, '106.79', 1000),
+(10212023, 19, 24, '100.00', 1000),
+(10212024, 19, 25, '0.28', 1000),
+(10212025, 19, 26, '176.58', 1000),
+(10212026, 10, 27, '37.92', 1000),
+(10212027, 19, 28, '0.43', 1000),
+(10212028, 19, 29, '270.38', 1000),
+(10212029, 19, 30, '183.40', 1000),
+(10212030, 19, 31, '176.58', 1000),
+(10212031, 19, 32, '100.00', 1000),
+(10212032, 10, 33, '98.76', 1000),
+(10212033, 10, 34, '98.76', 1000),
+(10212034, 10, 35, '98.76', 1000),
+(10212035, 10, 36, '98.76', 1000),
+(10212036, 19, 37, '248.97', 1000),
+(10212037, 10, 38, '0.00', 1000),
+(10212038, 19, 39, '106.79', 1000),
+(10212039, 19, 40, '114.40', 1000),
+(10212040, 19, 41, '114.40', 1000),
+(10212041, 19, 42, '106.79', 1000),
+(10212042, 19, 43, '106.79', 1000),
+(10212043, 19, 44, '114.40', 1000),
+(10212044, 19, 45, '106.79', 1000),
+(10212045, 19, 46, '114.40', 1000),
+(10212046, 19, 47, '114.40', 1000),
+(10212047, 16, 48, '0.05', 1000),
+(10212048, 16, 49, '0.08', 1000),
+(10212049, 16, 50, '0.13', 1000),
+(10212050, 11, 51, '0.09', 1000),
+(10212051, 11, 52, '0.28', 1000),
+(10212052, 19, 53, '114.40', 1000),
+(10212053, 19, 54, '114.40', 1000),
+(10212054, 19, 55, '106.79', 1000),
+(10212055, 19, 56, '114.40', 1000),
+(10212056, 19, 57, '106.79', 1000),
+(10212057, 2, 58, '0.00', 1000),
+(10212058, 18, 59, '0.00', 1000),
+(10212059, 18, 60, '0.00', 1000),
+(10212060, 8, 61, '0.00', 1000),
+(10212061, 9, 62, '0.00', 1000),
+(10212062, 8, 63, '0.00', 1000),
+(10212063, 4, 64, '0.05', 1000),
+(10212064, 4, 65, '0.20', 1000),
+(10212065, 4, 66, '0.33', 1000),
+(10212066, 7, 67, '0.00', 1000),
+(10212067, 9, 68, '0.00', 1000),
+(10212068, 9, 69, '0.00', 1000),
+(10212069, 15, 70, '0.00', 1000),
+(10212070, 6, 71, '0.12', 1000),
+(10212071, 10, 72, '0.00', 1000),
+(10212072, 10, 73, '10.05', 1000),
+(10212073, 10, 74, '2.95', 1000),
+(10212074, 10, 75, '3.37', 1000),
+(10212075, 10, 76, '4.53', 1000),
+(10212076, 1, 77, '0.35', 1000),
+(10212077, 18, 78, '0.15', 1000),
+(10212078, 1, 79, '0.51', 1000),
+(10212079, 11, 80, '0.28', 1000),
+(10212080, 11, 81, '0.08', 1000),
+(10212081, 18, 82, '0.04', 1000),
+(10212082, 18, 83, '0.07', 1000),
+(10212083, 6, 84, '0.00', 1000),
+(10212084, 7, 85, '0.00', 1000),
+(10212085, 6, 86, '0.92', 1000),
+(10212086, 6, 87, '0.72', 1000),
+(10212087, 6, 88, '0.00', 1000),
+(10212088, 7, 89, '0.00', 1000),
+(10212089, 6, 90, '0.40', 1000),
+(10212090, 9, 91, '1.65', 1000),
+(10212091, 21, 92, '0.00', 1000),
+(10212092, 9, 93, '0.10', 1000),
+(10212093, 10, 94, '0.00', 1000),
+(10212094, 15, 95, '0.13', 1000),
+(10212095, 9, 96, '0.20', 1000),
+(10212096, 18, 97, '0.04', 1000),
+(10212097, 1, 98, '0.18', 1000),
+(10212098, 15, 99, '0.00', 1000),
+(10212099, 16, 100, '0.00', 1000),
+(10212100, 6, 101, '0.32', 1000),
+(10212101, 10, 102, '0.00', 1000),
+(10212102, 16, 103, '0.00', 1000),
+(10212103, 13, 104, '1.78', 1000),
+(10212104, 17, 105, '4.00', 1000),
+(10212105, 17, 106, '4.00', 1000),
+(10212106, 17, 107, '4.00', 1000),
+(10212107, 17, 108, '4.00', 1000),
+(10212108, 17, 109, '4.00', 1000),
+(10212109, 17, 110, '4.00', 1000),
+(10212110, 17, 111, '4.00', 1000),
+(10212111, 17, 112, '4.00', 1000),
+(10212112, 1, 113, '0.22', 1000),
+(10212113, 17, 114, '4.00', 1000),
+(10212114, 19, 115, '106.79', 1000),
+(10212115, 19, 116, '106.79', 1000),
+(10212116, 19, 117, '106.79', 1000),
+(10212117, 19, 118, '167.02', 1000),
+(10212118, 19, 119, '167.02', 1000),
+(10212119, 19, 120, '167.02', 1000),
+(10212120, 19, 121, '167.02', 1000),
+(10212121, 19, 122, '167.02', 1000),
+(10212122, 19, 123, '167.02', 1000),
+(10212123, 19, 124, '167.02', 1000),
+(10212124, 19, 125, '167.02', 1000),
+(10212125, 19, 126, '167.02', 1000),
+(10212126, 19, 127, '0.00', 1000),
+(10212127, 19, 128, '0.00', 1000),
+(10212128, 5, 129, '3.68', 1000),
+(10212129, 5, 130, '6.50', 860),
+(10212130, 5, 131, '11.18', 1000),
+(10212131, 10, 132, '0.00', 1000),
+(10212132, 9, 133, '0.00', 1000),
+(10212133, 11, 134, '0.00', 1000),
+(10212134, 15, 135, '0.03', 1000),
+(10212135, 15, 136, '0.08', 1000),
+(10212136, 15, 137, '0.04', 1000),
+(10212137, 9, 138, '0.00', 1000),
+(10212138, 9, 139, '0.00', 1000),
+(10212139, 9, 140, '0.00', 1000),
+(10212140, 9, 141, '0.00', 1000),
+(10212141, 9, 142, '0.00', 1000),
+(10212142, 9, 143, '0.00', 1000),
+(10212143, 20, 144, '0.10', 1000),
+(10212144, 20, 145, '0.00', 1000),
+(10212145, 20, 146, '0.00', 1000),
+(10212146, 20, 147, '0.00', 1000),
+(10212147, 20, 148, '0.00', 1000),
+(10212148, 20, 149, '0.00', 1000),
+(10212149, 21, 150, '0.00', 1000),
+(10212150, 10, 151, '0.00', 1000),
+(10212151, 10, 152, '0.00', 1000),
+(10212152, 15, 153, '0.12', 1000),
+(10212153, 9, 154, '0.00', 1000),
+(10212154, 7, 155, '0.14', 1000),
+(10212155, 6, 156, '0.00', 1000),
+(10212156, 7, 157, '0.00', 1000),
+(10212157, 6, 158, '0.00', 1000),
+(10212158, 5, 159, '0.00', 1000),
+(10212159, 5, 160, '0.00', 1000),
+(10212160, 9, 161, '11.80', 1000),
+(10212161, 9, 162, '17.70', 1000),
+(10212162, 9, 163, '2.30', 1000),
+(10212163, 8, 164, '23.40', 1000),
+(10212164, 1, 165, '0.00', 1000),
+(10212165, 13, 166, '0.00', 1000),
+(10212166, 9, 167, '0.00', 1000),
+(10212167, 13, 168, '0.00', 1000),
+(10212168, 6, 169, '0.00', 1000),
+(10212169, 14, 170, '0.00', 1000),
+(10212170, 2, 183, '50.00', 10),
+(10212171, 2, 184, '60.00', 101),
+(10212172, 10, 185, '175.00', 10);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `id` int(100) NOT NULL,
+  `job_number` varchar(16) NOT NULL,
+  `quantity` int(16) NOT NULL,
+  `date_added` date NOT NULL,
+  `item_number` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`id`, `job_number`, `quantity`, `date_added`, `item_number`) VALUES
+(1, 'C-5120', 23, '0000-00-00', 10212003),
+(2, 'C-5120', 23, '2019-07-29', 10212009),
+(3, 'C-5120', 20, '2019-07-30', 10212000),
+(4, 'C-5120', 23, '2019-07-30', 10212009),
+(5, 'C-5120', 31, '2019-07-30', 10212009),
+(6, 'C-5120', 23, '2019-07-30', 10212000),
+(7, 'C-5120', 100, '2019-07-30', 10212009),
+(8, 'C-5110', 10, '2019-07-31', 10212129),
+(9, 'C-5111', 30, '2019-07-31', 10212129),
+(10, 'C-5115', 100, '2019-07-31', 10212129);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `category`
+--
+ALTER TABLE `category`
+  ADD PRIMARY KEY (`cat_id`);
+
+--
+-- Indexes for table `items`
+--
+ALTER TABLE `items`
+  ADD PRIMARY KEY (`item_id`);
+
+--
+-- Indexes for table `objects`
+--
+ALTER TABLE `objects`
+  ADD PRIMARY KEY (`item_number`);
+
+--
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `category`
+--
+ALTER TABLE `category`
+  MODIFY `cat_id` int(16) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT for table `items`
+--
+ALTER TABLE `items`
+  MODIFY `item_id` int(16) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=186;
+
+--
+-- AUTO_INCREMENT for table `objects`
+--
+ALTER TABLE `objects`
+  MODIFY `item_number` int(16) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10212173;
+
+--
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
